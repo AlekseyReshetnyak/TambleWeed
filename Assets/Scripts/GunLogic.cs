@@ -59,23 +59,24 @@ public class GunLogic : MonoBehaviour
             Ray GunRay = new Ray(startPoint, transform.TransformDirection(Vector3.right));
             RaycastHit Hit;
 
-            if(Physics.Raycast(GunRay, out Hit, 100, LayerMask.GetMask("Player")))
-            {
-                StartCoroutine(StartGunWork(Hit));
-            }
+            bool RayHit = Physics.Raycast(GunRay, out Hit, 100, LayerMask.GetMask("Player"));
+
+            StartCoroutine(StartGunWork(Hit, RayHit));
 
             Debug.DrawRay(startPoint, transform.TransformDirection(Vector3.right), Color.red, 100);
         }
     }
 
-    IEnumerator StartGunWork(RaycastHit Hit, int countFrame = 0)
+    IEnumerator StartGunWork(RaycastHit Hit, bool RayHit, int countFrame = 0)
     {
         anim.Play("GunWork");
         while (countFrame <= 120)
         {
             countFrame += 1;
-
+            if (RayHit)
+            {
             Hit.collider.transform.position -= Vector3.Normalize(transform.TransformDirection(Vector3.right)) * Time.deltaTime;
+            }
             yield return null;
         }
     }
