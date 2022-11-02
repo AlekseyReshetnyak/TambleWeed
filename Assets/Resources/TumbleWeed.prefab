@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 819833949890342945}
   - component: {fileID: 5976557804104960257}
-  - component: {fileID: 5996549197223195143}
   - component: {fileID: 991136515}
+  - component: {fileID: 4881969319234521747}
   m_Layer: 6
   m_Name: TumbleWeed
   m_TagString: Untagged
@@ -86,22 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5996549197223195143
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2188284162115319927}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.0145789385}
-  serializedVersion: 2
-  m_Radius: 0.4062481
 --- !u!114 &991136515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,3 +100,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   rb: {fileID: 0}
+--- !u!135 &4881969319234521747
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188284162115319927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.39413747
+  m_Center: {x: -0.0028612018, y: 0.020028025, z: 0}
